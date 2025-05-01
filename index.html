@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <title>질문사항 보내기</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>댓글 기능 테스트</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    .comment-box {
+      margin-top: 2rem;
+      border-top: 1px solid #ccc;
+      padding-top: 1rem;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 150px;
+    }
+  </style>
 </head>
 <body>
-  <h1>문의사항 보내기</h1>
-  <form name="submit-to-google-sheet">
-    <label>이름: <input name="name" required></label><br><br>
-    <label>이메일: <input name="email" type="email" required></label><br><br>
-    <label>질문 내용:<br><textarea name="message" rows="5" cols="40" required></textarea></label><br><br>
-    <button type="submit">제출</button>
-  </form>
-  <p id="response"></p>
 
-  <script>
-    const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-    const form = document.forms['submit-to-google-sheet'];
-    const response = document.getElementById('response');
+  <h1>블로그 포스트 제목</h1>
+  <p>이곳은 본문 내용입니다...</p>
 
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => {
-          form.reset();
-          response.innerHTML = "제출되었습니다. 감사합니다!";
-        })
-        .catch(error => {
-          response.innerHTML = "오류가 발생했습니다. 다시 시도해주세요.";
-        });
-    });
-  </script>
+  <div class="comment-box">
+    <h2>댓글 달기</h2>
+    <a href="https://github.com/inhaj/inhaj.github.io/issues/new?title=댓글+for+/post-title" target="_blank">
+      👉 이 페이지에 댓글을 GitHub 이슈로 남기기
+    </a>
+    
+    <p style="margin-top: 1rem;">댓글은 GitHub 저장소의 이슈 탭에서 확인할 수 있습니다.</p>
+    <p><a href="https://github.com/inhaj/inhaj.github.io/issues" target="_blank">🗂 댓글 모아보기</a></p>
+  </div>
+
 </body>
 </html>
