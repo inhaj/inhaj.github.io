@@ -2,23 +2,38 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Utterances 댓글 기능</title>
+
+  <style>
+    body {
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      max-width: 700px;
+      margin: 50px auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    #comments {
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
 
   <h1>블로그 게시글 제목</h1>
-  <p>이곳은 본문 내용입니다...</p>
+  <p>이곳은 본문 내용입니다. 이 아래에 댓글이 나타납니다.</p>
 
-  <div id="comments"></div>
-
-  <script src="https://utteranc.es/client.js"
-          repo="inhaj/inhaj.github.io"
-          issue-term="pathname"
-          label="💬 comment"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
+  <div id="comments">
+    <!-- 댓글이 여기에 삽입됨 -->
+    <script src="https://utteranc.es/client.js"
+            repo="inhaj/inhaj.github.io"
+            issue-term="pathname"
+            label="💬 comment"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
 
 </body>
 </html>
