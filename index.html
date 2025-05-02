@@ -16,12 +16,17 @@
     #comments {
       margin-top: 50px;
     }
+    #privacy {
+      margin-top: 80px;
+      padding-top: 30px;
+      border-top: 1px solid #ccc;
+    }
   </style>
 </head>
 <body>
 
   <h1>여기에 질문사항을 남겨주세요</h1>
-   <p>문의 사항이 있으시다면 wprkfdlsgk@gmail.com로 바랍니다.</p>
+  <p>문의 사항이 있으시다면 <a href="mailto:wprkfdlsgk@gmail.com">wprkfdlsgk@gmail.com</a>로 바랍니다.</p>
 
   <div id="comments">
     <!-- 댓글이 여기에 삽입됨 -->
@@ -34,6 +39,21 @@
             async>
     </script>
   </div>
+
+  <div id="privacy">
+    <!-- privacy.html 내용이 여기에 삽입됨 -->
+  </div>
+
+  <script>
+    fetch('privacy.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('privacy').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('privacy.html 로딩 실패:', error);
+      });
+  </script>
 
 </body>
 </html>
