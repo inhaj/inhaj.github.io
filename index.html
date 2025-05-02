@@ -16,17 +16,26 @@
     #comments {
       margin-top: 50px;
     }
-    #privacy {
+    #privacy-section {
       margin-top: 80px;
       padding-top: 30px;
       border-top: 1px solid #ccc;
+    }
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 
   <h1>여기에 질문사항을 남겨주세요</h1>
-  <p>문의 사항이 있으시다면 <a href="mailto:wprkfdlsgk@gmail.com">wprkfdlsgk@gmail.com</a>로 바랍니다.</p>
+  <p>문의 사항이 있으시다면 <a href="mailto:wprkfdlsgk@gmail.com">wprkfdlsgk@gmail.com</a> 로 메일을 보내주시거나, 아래 댓글을 통해 문의하실 수 있습니다.</p>
+
+  <p><a href="#privacy-section">📄 개인정보 처리방침 보기</a></p>
 
   <div id="comments">
     <!-- 댓글이 여기에 삽입됨 -->
@@ -40,7 +49,7 @@
     </script>
   </div>
 
-  <div id="privacy">
+  <div id="privacy-section">
     <!-- privacy.html 내용이 여기에 삽입됨 -->
   </div>
 
@@ -48,7 +57,7 @@
     fetch('privacy.html')
       .then(response => response.text())
       .then(data => {
-        document.getElementById('privacy').innerHTML = data;
+        document.getElementById('privacy-section').innerHTML = data;
       })
       .catch(error => {
         console.error('privacy.html 로딩 실패:', error);
